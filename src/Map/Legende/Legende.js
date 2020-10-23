@@ -18,8 +18,8 @@ const Legende = (props) => {
         test.map((e, i) => (
           <div key={i}>
             <p>
-              {e.fields.nom_gare}, Montants :{e.fields.montants}, Ligne :{" "}
-              {e.fields.ligne}, Date : {e.fields.date_comptage}
+              {e.fields.nom_gare} | Montants : {e.fields.montants} | Ligne :{" "}
+              {e.fields.ligne} | Date : {e.fields.date_comptage}
             </p>
           </div>
         ))}
