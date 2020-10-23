@@ -22,7 +22,7 @@ function Map() {
   console.log(infoGare);
 
   return (
-    <div style={{ height: "70vh", width: "100%", zIndex: 0 }}>
+    <div style={{ height: "65vh", width: "100%", zIndex: 0 }}>
       <GoogleMapReact
         bootstrapURLKeys={{ key: googleKey }}
         defaultCenter={map.center}

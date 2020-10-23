@@ -25,7 +25,7 @@ const TimeBar = (props) => {
   };
 
   return (
-    <div style={{ width: "90%", margin: "4% auto", marginLeft:'10%'}}>
+    <div style={{ width: "90%", margin: "2% auto 1% 10%"}}>
       <div className="progress">
         <ul>
           {steps.map((e, i) => (
