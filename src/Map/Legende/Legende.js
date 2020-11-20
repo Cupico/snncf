@@ -7,11 +7,11 @@ const Legende = (props) => {
 
   return (
     <div style={{ width: "100%", paddingLeft: "19%"}}>
-      <div class="div-legende">
+      <div className="div-legende">
         Légende <br /> Visiteurs : <br />
-        Inférieur à 6000 en <span style={{ color: "green" }}>vert</span>
+        Inférieur à 1000 en <span style={{ color: "green" }}>vert</span>
         <br />
-        Supérieur à 6000 en <span style={{ color: "red" }}>rouge</span>
+        Supérieur à 1000 en <span style={{ color: "red" }}>rouge</span>
       </div>
       {props.infoGare &&
         props.infoGare.length > 0 &&

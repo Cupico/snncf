@@ -4,46 +4,52 @@ import { IoMdTrain } from "react-icons/io";
 const Marker = (props) => {
   const [display, setDisplay] = useState(false);
 
-  const displayInfo = () => {
+  const enter = () => {
     setDisplay(true);
   };
 
-  const closeDisplayInfo = () => {
+  const leave = () => {
     setDisplay(false);
   };
 
   return (
     <div
-      onMouseEnter={props.infoGare ? displayInfo : undefined}
-      onMouseLeave={closeDisplayInfo}
       style={{ zIndex: 9999, cursor: "pointer" }}
+      onMouseEnter={enter}
+      onMouseLeave={leave}
     >
-      <IoMdTrain
-        style={{
-          color: props.infoGare
-            ? props.infoGare.fields.montants < 6000
-              ? "green"
-              : "red"
-            : "black",
-          fontSize: "2.5rem",
-        }}
-      />
       {display && (
         <div
           style={{
+            zIndex: 9999,
+            color: "#ffffff",
             position: "absolute",
-            width: "300px",
-            background: "rgba(0, 0, 0, 0.5)",
-            textAlign: "center",
-            fontSize: "1.1rem",
+            bottom: "10px",
+            background: "rgba(0,0,0,0.5)",
+            width: "100px",
+            height: "50px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            textAlign:'center'
           }}
         >
-          <p style={{ color: "white", fontWeight: "600px" }}>
-            {props.gare.name}, Ligne: {props.infoGare.fields.ligne}, Montants :{" "}
-            {props.infoGare.fields.montants}
+          <p>
+            {props.name} <br />
+            <span style={{marginTop:"20px"}}>{props.montant ?  `Voyageur : ${props.montant}` : ""}</span>
           </p>
         </div>
       )}
+      <IoMdTrain
+        style={{
+          color: props.montant
+            ? props.montant > 1000
+              ? "red"
+              : "green"
+            : "black",
+          fontSize: "1.8rem",
+        }}
+      />
     </div>
   );
 };
