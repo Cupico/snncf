@@ -76,7 +76,7 @@ function Map() {
       )}
 
       <GoogleMapReact
-       bootstrapURLKeys={{ key: googleKey }}
+      // bootstrapURLKeys={{ key: googleKey }}
         defaultCenter={map.center}
         defaultZoom={map.zoom}
       >
