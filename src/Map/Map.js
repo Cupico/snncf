@@ -16,7 +16,7 @@ import { getAffluenceRER } from "../callApi/callApi";
 function Map() {
   const [map, setMap] = useState({
     center: {
-      lat: 48.9167,
+      lat: 48.85,
       lng: 2.3833,
     },
     zoom: 11,
@@ -26,7 +26,7 @@ function Map() {
 
   const [isLoading, setIsLoading] = useState(false);
 
-  const [newGare, setNewGare] = useState(rera);
+  const [newGare, setNewGare] = useState([]);
 
   const getAffluence = (value) => {
     setIsLoading(true);
@@ -47,11 +47,11 @@ function Map() {
               lng: rera[i].lng,
             };
           })
-          .catch((err) =>   console.log(err));
+          .catch((err) => console.log(err));
       }
 
       setTimeout(() => {
-        setIsLoading(false)
+        setIsLoading(false);
       }, 4000);
 
       setTimeout(() => {
@@ -61,7 +61,7 @@ function Map() {
   };
 
   return (
-    <div style={{ height: "65vh", width: "100%", zIndex: 0 }}>
+    <div style={{ height: "100vh", width: "100%", zIndex: 1 }}>
       {isLoading && (
         <div className="spinner">
           <span class="ouro">
@@ -76,7 +76,7 @@ function Map() {
       )}
 
       <GoogleMapReact
-      // bootstrapURLKeys={{ key: googleKey }}
+        bootstrapURLKeys={{ key: googleKey }}
         defaultCenter={map.center}
         defaultZoom={map.zoom}
       >
@@ -94,9 +94,12 @@ function Map() {
           ))}
       </GoogleMapReact>
 
-      <TimeBar getAffluence={getAffluence} />
+      <div class="container-legende">
+        <div class="block-bar"><TimeBar newGare={newGare} getAffluence={getAffluence} /></div>
 
-      <Legende />
+        <div class="block-legende"><Legende setNewGare={setNewGare}/></div>
+      </div>
+
     </div>
   );
 }

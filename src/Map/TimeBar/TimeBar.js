@@ -6,8 +6,10 @@ const TimeBar = (props) => {
   const [step, setStep] = useState(0);
 
   const nextStep = (event) => {
-    setStep(event.target.value);
-    props.getAffluence(event.target.value - 1);
+    if(props.newGare && props.newGare.length > 0){
+      setStep(event.target.value);
+      props.getAffluence(event.target.value - 1);
+    }
   };
 
   return (

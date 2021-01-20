@@ -19,35 +19,27 @@ const Marker = (props) => {
       onMouseLeave={leave}
     >
       {display && (
-        <div
-          style={{
-            zIndex: 9999,
-            color: "#ffffff",
-            position: "absolute",
-            bottom: "10px",
-            background: "rgba(0,0,0,0.5)",
-            width: "100px",
-            height: "50px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            textAlign:'center'
-          }}
-        >
+        <div class="hoverGare">
           <p>
             {props.name} <br />
-            <span style={{marginTop:"20px"}}>{props.montant ?  `Voyageur : ${props.montant}` : ""}</span>
+            <span style={{ marginTop: "200px" }}>
+              {props.montant ? `Voyageur : ${props.montant}` : ""}
+            </span>
           </p>
         </div>
       )}
       <IoMdTrain
         style={{
           color: props.montant
-            ? props.montant > 1000
-              ? "red"
-              : "green"
+            ? (props.montant < 1000 && "green") ||
+              (props.montant > 1000 && props.montant < 5000 && "orange") ||
+              (props.montant > 5000 && "red")
             : "black",
-          fontSize: "1.8rem",
+          fontSize: props.montant
+          ? (props.montant < 1000 && "1.8rem") ||
+            (props.montant > 1000 && props.montant < 5000 && "2.5rem") ||
+            (props.montant > 5000 && "3.2rem")
+          : "1.8rem",
         }}
       />
     </div>
