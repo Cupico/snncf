@@ -12,16 +12,18 @@
 
 .block-bar{
   padding-top: 30px;
-  background-color: rgba(255, 255, 255, 0.9);
-  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
+  border-radius: 15px;
   width: 70%;
   height: 0%;
 }
 
 .block-legende{
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 1);
   width: 23%;
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
+  border-radius: 15px;
   padding: 15px 20px 15px 20px;
 }
 
