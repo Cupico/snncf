@@ -1130,12 +1130,12 @@
     "strip-json-comments" "^3.1.1"
 
 "@googlemaps/google-maps-services-js@^3.1.13":
-  "integrity" "sha512-ONG8YFlqeofi2+CcEhtvlIkFD8Ia2p64RHnk2fZOigwOCKZ5BLs/Z/nOMnwM6JGFf2FX0x/hWzoOtQ7tUG4YAg=="
-  "resolved" "https://registry.npmjs.org/@googlemaps/google-maps-services-js/-/google-maps-services-js-3.1.13.tgz"
-  "version" "3.1.13"
+  "integrity" "sha512-Hb1zItxsm68vkWb5i+/wDj64ZK66DZlatglkdNWAWM2ziARdgj+Q4XeWxbkdHh+/OKmeKEcknC8ADF9ZgS/G1w=="
+  "resolved" "https://registry.npmjs.org/@googlemaps/google-maps-services-js/-/google-maps-services-js-3.1.16.tgz"
+  "version" "3.1.16"
   dependencies:
     "agentkeepalive" "^4.1.0"
-    "axios" "0.19.0 || ^0.20.1"
+    "axios" "^0.21.1"
     "query-string" "^6.11.0"
     "retry-axios" "^2.2.1"
 
@@ -2561,13 +2561,12 @@
   "resolved" "https://registry.npmjs.org/axe-core/-/axe-core-4.1.1.tgz"
   "version" "4.1.1"
 
-"axios@0.19.0 || ^0.20.1":
-  "integrity" "sha512-1uvKqKQta3KBxIz14F2v06AEHZ/dIoeKfbTRkK1E5oqjDnuEerLmYTgJB5AiQZHJcljpg1TuRzdjDR06qNk0DQ=="
-  "resolved" "https://registry.npmjs.org/axios/-/axios-0.19.0.tgz"
-  "version" "0.19.0"
+"axios@^0.21.1":
+  "integrity" "sha512-dKQiRHxGD9PPRIUNIWvZhPTPpl1rf/OxTYKsqKUDjBwYylTvV7SjSHJb9ratfyzM6wCdLCOYLzs73qpg5c4iGA=="
+  "resolved" "https://registry.npmjs.org/axios/-/axios-0.21.1.tgz"
+  "version" "0.21.1"
   dependencies:
-    "follow-redirects" "1.5.10"
-    "is-buffer" "^2.0.2"
+    "follow-redirects" "^1.10.0"
 
 "axobject-query@^2.2.0":
   "integrity" "sha512-Td525n+iPOOyUQIeBfcASuG6uJsDOITl7Mds5gFyerkWiX7qhUTdYUBlSgNMyVqtSJqwpt1kXGLdUt6SykLMRA=="
@@ -4047,13 +4046,6 @@
   dependencies:
     "ms" "2.1.2"
 
-"debug@=3.1.0":
-  "integrity" "sha512-OX8XqP7/1a9cqkxYw2yXss15f26NKWBpDXQd0/uK/KPqdQhxbPa994hnzjcE2VqQpDslf55723cKPUOGSmMY3g=="
-  "resolved" "https://registry.npmjs.org/debug/-/debug-3.1.0.tgz"
-  "version" "3.1.0"
-  dependencies:
-    "ms" "2.0.0"
-
 "decamelize@^1.2.0":
   "integrity" "sha1-9lNNFRSCabIDUue+4m9QH5oZEpA="
   "resolved" "https://registry.npmjs.org/decamelize/-/decamelize-1.2.0.tgz"
@@ -5243,17 +5235,10 @@
     "inherits" "^2.0.3"
     "readable-stream" "^2.3.6"
 
-"follow-redirects@^1.0.0":
+"follow-redirects@^1.0.0", "follow-redirects@^1.10.0":
   "integrity" "sha512-aq6gF1BEKje4a9i9+5jimNFIpq4Q1WiwBToeRK5NvZBd/TRsmW8BsJfOEGkr76TbOyPVD3OVDN910EcUNtRYEA=="
   "resolved" "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.13.0.tgz"
   "version" "1.13.0"
-
-"follow-redirects@1.5.10":
-  "integrity" "sha512-0V5l4Cizzvqt5D44aTXbFZz+FtyXV1vrDN6qrelxtfYQKW0KO0W2T/hkE8xvGa/540LkZlkaUjO4ailYTFtHVQ=="
-  "resolved" "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.5.10.tgz"
-  "version" "1.5.10"
-  dependencies:
-    "debug" "=3.1.0"
 
 "for-in@^1.0.2":
   "integrity" "sha1-gQaNKVqBQuwKxybG4iAMMPttXoA="
@@ -6148,11 +6133,6 @@
   "integrity" "sha512-NcdALwpXkTm5Zvvbk7owOUSvVvBKDgKP5/ewfXEznmQFfs4ZRmanOeKBTjRVjka3QFoN6XJ+9F3USqfHqTaU5w=="
   "resolved" "https://registry.npmjs.org/is-buffer/-/is-buffer-1.1.6.tgz"
   "version" "1.1.6"
-
-"is-buffer@^2.0.2":
-  "integrity" "sha512-Kq1rokWXOPXWuaMAqZiJW4XxsmD9zGx9q4aePabbn3qCRGedtH7Cm+zV8WETitMfu1wdh+Rvd6w5egwSngUX2A=="
-  "resolved" "https://registry.npmjs.org/is-buffer/-/is-buffer-2.0.4.tgz"
-  "version" "2.0.4"
 
 "is-callable@^1.1.4", "is-callable@^1.1.5", "is-callable@^1.2.2":
   "integrity" "sha512-dnMqspv5nU3LoewK2N/y7KLtxtakvTuaCsU9FU50/QDmdbHNy/4/JuRtMHqRU22o3q+W89YQndQEeCVwK+3qrA=="

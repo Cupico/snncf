@@ -5,8 +5,7 @@ const App = () => {
   return (
     // Important! Always set the container height explicitly
     <div>
-      hey
-      {/*<Map />*/}
+      <Map />
     </div>
   );
 }
