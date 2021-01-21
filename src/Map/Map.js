@@ -13,15 +13,15 @@ import { steps, rera } from "../constant";
 
 import { getAffluenceRER } from "../callApi/callApi";
 
-function Map() {
-  const [map, setMap] = useState({
-    center: {
-      lat: 48.85,
-      lng: 2.3833,
-    },
-    zoom: 11,
-  });
+const map = {
+  center: {
+    lat: 48.85,
+    lng: 2.3833,
+  },
+  zoom: 11,
+};
 
+function Map() {
   //const [gareGeo, setGareGeo] = useState(ligne1constante);
 
   const [isLoading, setIsLoading] = useState(false);
@@ -95,11 +95,14 @@ function Map() {
       </GoogleMapReact>
 
       <div class="container-legende">
-        <div class="block-bar"><TimeBar newGare={newGare} getAffluence={getAffluence} /></div>
+        <div class="block-bar">
+          <TimeBar newGare={newGare} getAffluence={getAffluence} />
+        </div>
 
-        <div class="block-legende"><Legende setNewGare={setNewGare}/></div>
+        <div class="block-legende">
+          <Legende setNewGare={setNewGare} />
+        </div>
       </div>
-
     </div>
   );
 }

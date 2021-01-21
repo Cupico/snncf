@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { IoMdTrain } from "react-icons/io";
+import { BiTrain } from "react-icons/bi";
 
 const Marker = (props) => {
   const [display, setDisplay] = useState(false);
@@ -28,7 +28,7 @@ const Marker = (props) => {
           </p>
         </div>
       )}
-      <IoMdTrain
+      <BiTrain
         style={{
           color: props.montant
             ? (props.montant < 1000 && "green") ||
