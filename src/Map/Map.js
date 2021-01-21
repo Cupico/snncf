@@ -64,7 +64,7 @@ function Map() {
     <div style={{ height: "100vh", width: "100%", zIndex: 1 }}>
       {isLoading && (
         <div className="spinner">
-          <span class="ouro">
+          <span className="ouro">
             <span className="left">
               <span className="anim"></span>
             </span>
@@ -94,12 +94,12 @@ function Map() {
           ))}
       </GoogleMapReact>
 
-      <div class="container-legende">
-        <div class="block-bar">
+      <div className="container-legende">
+        <div className="block-bar">
           <TimeBar newGare={newGare} getAffluence={getAffluence} />
         </div>
 
-        <div class="block-legende">
+        <div className="block-legende">
           <Legende setNewGare={setNewGare} />
         </div>
       </div>
