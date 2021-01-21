@@ -28,7 +28,7 @@ const Legende = (props) => {
               id="switch-1"
               onClick={handleMarker}
             />
-            <label className="toggle-action" htmlFor="switch-1"></label>
+            <label className="toggle-action" htmlFor="switch-1">&nsbp;</label>
           </div>
           <span className="rera">Rer A</span>
         </div>
