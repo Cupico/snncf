@@ -1,12 +1,12 @@
 import React from "react";
-
 import Map from "./Map/Map";
 
-function App() {
+const App = () => {
   return (
     // Important! Always set the container height explicitly
-    <div className="App">
-      <Map />
+    <div>
+      hey
+      {/*<Map />*/}
     </div>
   );
 }

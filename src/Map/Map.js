@@ -61,7 +61,7 @@ function Map() {
   };
 
   return (
-    <div style={{ height: "100vh", width: "100%", zIndex: 1 }}>
+    <div class="Map">
       {isLoading && (
         <div className="spinner">
           <span className="ouro">
