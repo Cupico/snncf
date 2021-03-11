@@ -4,6 +4,37 @@
   z-index: 1;
 }
 
+/* STYLE MAP BUTTON */
+.container-button-style-map {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 999;
+}
+
+.container-button-style-map button {
+  outline: none;
+  border: none;
+  background-color: red;
+  width: 70px;
+  height: 70px;
+}
+
+.btn-map-style1 button{
+  background-image: url('../assets/style2.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.btn-map-style2 button{
+  margin-top: 20px;
+  background-image: url('../assets/style1.png');
+  background-size: cover;
+  background-position: center;
+}
+
+/* end */
+
 .container-legende {
   position: absolute;
   z-index: 0;

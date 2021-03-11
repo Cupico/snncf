@@ -7,7 +7,7 @@ import Marker from "./Marker/Marker";
 import Legende from "./Legende/Legende";
 import TimeBar from "./TimeBar/TimeBar";
 
-import { googleKey } from "./../api/apiGoogle.js";
+import { googleKey, style1, style2 } from "./../api/apiGoogle.js";
 
 import { steps, rera } from "../constant";
 
@@ -23,6 +23,7 @@ const map = {
 
 function Map() {
   //const [gareGeo, setGareGeo] = useState(ligne1constante);
+  const [mapStyle, setMapStyle] = useState(style1);
 
   const [isLoading, setIsLoading] = useState(false);
 
@@ -61,7 +62,7 @@ function Map() {
   };
 
   return (
-    <div class="Map">
+    <div className="Map">
       {isLoading && (
         <div className="spinner">
           <span className="ouro">
@@ -75,10 +76,22 @@ function Map() {
         </div>
       )}
 
+      <div className="container-button-style-map">
+        <div className="btn-map-style1">
+          <button onClick={() => setMapStyle(style1)} style={mapStyle === style1 ? {border: "1px solid white"} : {border: "1px solid transparent"}}></button>
+        </div>
+        <div className="btn-map-style2">
+          <button onClick={() => setMapStyle(style2)} style={mapStyle === style2 ? {border: "1px solid white"} : {border: "1px solid transparent"}}></button>
+        </div>
+      </div>
+
       <GoogleMapReact
         bootstrapURLKeys={{ key: googleKey }}
         defaultCenter={map.center}
         defaultZoom={map.zoom}
+        options={{
+          styles: mapStyle,
+        }}
       >
         {newGare &&
           newGare.length > 0 &&
