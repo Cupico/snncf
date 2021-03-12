@@ -1,4 +1,4 @@
-export const googleKey = ''
+export const googleKey = 'AIzaSyB1HpSbn4bSaD72hicFEnAezu8JItE9LvY'
 //AIzaSyB1HpSbn4bSaD72hicFEnAezu8JItE9LvY
 
 
