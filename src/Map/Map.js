@@ -11,7 +11,7 @@ import { googleKey, style1, style2 } from "./../api/apiGoogle.js";
 
 import { steps } from "../constant";
 
-import { getAffluenceRER , getRer, getCoordinatesRer } from "../callApi/callApi";
+import { getAffluenceRER} from "../callApi/callApi";
 
 
 
