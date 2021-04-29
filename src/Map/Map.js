@@ -9,9 +9,12 @@ import TimeBar from "./TimeBar/TimeBar";
 
 import { googleKey, style1, style2 } from "./../api/apiGoogle.js";
 
-import { steps, rera } from "../constant";
+import { steps } from "../constant";
 
-import { getAffluenceRER } from "../callApi/callApi";
+import { getAffluenceRER , getRer, getCoordinatesRer } from "../callApi/callApi";
+
+
+
 
 const map = {
   center: {
@@ -29,23 +32,26 @@ function Map() {
 
   const [newGare, setNewGare] = useState([]);
 
+  const [step, setStep] = useState(0);
+
   const getAffluence = (value) => {
     setIsLoading(true);
     const NoDataGare = 300;
     let array = [...newGare];
-    if (rera && rera.length > 0) {
-      for (let i = 0; i < rera.length; i++) {
-        getAffluenceRER(rera[i].code, steps[value].time)
+    if (newGare && newGare.length > 0) {
+      for (let i = 0; i < newGare.length; i++) {
+        getAffluenceRER(newGare[i].code, steps[value].time)
           .then((res) => {
             const affluence =
               res.records.length && res.records.length > 0
                 ? res.records[0].fields.montants
                 : NoDataGare;
             array[i] = {
-              name: rera[i].name,
+              name: newGare[i].name,
               montants: affluence,
-              lat: rera[i].lat,
-              lng: rera[i].lng,
+              lat: newGare[i].lat,
+              lng: newGare[i].lng,
+              img: newGare[i].img
             };
           })
           .catch((err) => console.log(err));
@@ -61,8 +67,12 @@ function Map() {
     }
   };
 
+
+
+  
+
   return (
-    <div className="Map">
+    <div id="Map" className="Map">
       {isLoading && (
         <div className="spinner">
           <span className="ouro">
@@ -78,10 +88,24 @@ function Map() {
 
       <div className="container-button-style-map">
         <div className="btn-map-style1">
-          <button onClick={() => setMapStyle(style1)} style={mapStyle === style1 ? {border: "1px solid white"} : {border: "1px solid transparent"}}></button>
+          <button
+            onClick={() => setMapStyle(style1)}
+            style={
+              mapStyle === style1
+                ? { border: "1px solid white" }
+                : { border: "1px solid transparent" }
+            }
+          ></button>
         </div>
         <div className="btn-map-style2">
-          <button onClick={() => setMapStyle(style2)} style={mapStyle === style2 ? {border: "1px solid white"} : {border: "1px solid transparent"}}></button>
+          <button
+            onClick={() => setMapStyle(style2)}
+            style={
+              mapStyle === style2
+                ? { border: "1px solid white" }
+                : { border: "1px solid transparent" }
+            }
+          ></button>
         </div>
       </div>
 
@@ -102,6 +126,7 @@ function Map() {
               lng={e.lng}
               montant={e.montants}
               name={e.name}
+              img={e.img}
               //background: linear-gradient(#e66465, #9198e5);
             />
           ))}
@@ -109,11 +134,11 @@ function Map() {
 
       <div className="container-legende">
         <div className="block-bar">
-          <TimeBar newGare={newGare} getAffluence={getAffluence} />
+          <TimeBar step={step} setStep={setStep} newGare={newGare} getAffluence={getAffluence} />
         </div>
 
         <div className="block-legende">
-          <Legende setNewGare={setNewGare} />
+          <Legende setNewGare={setNewGare} setStep={setStep} />
         </div>
       </div>
     </div>

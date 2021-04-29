@@ -1,51 +1,44 @@
-import React, { useState } from "react";
+import React from "react";
 
 const Marker = (props) => {
-  const [display, setDisplay] = useState(false);
 
-  const enter = () => {
-    setDisplay(true);
-  };
-
-  const leave = () => {
-    setDisplay(false);
-  };
 
   return (
     <div
       style={{ zIndex: 9999, cursor: "pointer" }}
-      onMouseEnter={enter}
-      onMouseLeave={leave}
+      className="marker"
     >
-      {display && (
+      
         <div className="hoverGare">
+          <div className="container-card-img">
+          <img src={props.img} alt="Background card"/>
+          </div>
           <p>
             {props.name} <br />
-            <span style={{ marginTop: "200px" }}>
+            <span className="montant">
               {props.montant ? `Voyageur : ${props.montant}` : ""}
             </span>
           </p>
         </div>
-      )}
+      
       <div
         style={{
           backgroundColor: props.montant
-            ? (props.montant < 1000 && "green") ||
-              (props.montant > 1000 && props.montant < 5000 && "orange") ||
-              (props.montant > 5000 && "red")
-            : "black",
+            ? (props.montant < 1000 && "#FBD256") ||
+              (props.montant > 1000 && props.montant < 5000 && "#F0842C") ||
+              (props.montant > 5000 && "#A31700")
+            : "#20222B",
           width: props.montant
-          ? (props.montant < 1000 && "1.5rem") ||
-            (props.montant > 1000 && props.montant < 5000 && "2.5rem") ||
-            (props.montant > 5000 && "3.7rem")
+          ? (props.montant < 1000 && "1.4rem") ||
+            (props.montant > 1000 && props.montant < 5000 && "2.1rem") ||
+            (props.montant > 5000 && "3.2rem")
           : "1.8rem",
           height: props.montant
-          ? (props.montant < 1000 && "1.5rem") ||
-            (props.montant > 1000 && props.montant < 5000 && "2.5rem") ||
-            (props.montant > 5000 && "3.7rem")
+          ? (props.montant < 1000 && "1.4rem") ||
+          (props.montant > 1000 && props.montant < 5000 && "2.1rem") ||
+          (props.montant > 5000 && "3.2rem")
           : "1.8rem",
           borderRadius: "50%",
-          opacity: "0.5"
         }}
       />
     </div>

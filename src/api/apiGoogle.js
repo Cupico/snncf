@@ -374,7 +374,7 @@ export const style1 = [
       "elementType": "geometry.fill",
       "stylers": [
         {
-          "color": "#023e58"
+          "color": "#ffffff"
         }
       ]
     },
