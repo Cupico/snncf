@@ -1,3 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+
+
+
+body{
+  font-family: 'Patrick Hand', cursive;
+}
+
+
+
 .togglebtn {
   display: flex;
   align-items: center;
@@ -7,7 +18,7 @@
   margin-top: 5px;
   margin-left: 10px;
   font-weight: normal;
-  font-size: 1rem;
+  font-size: 1.4rem;
 }
 
 .affluence-title {
@@ -28,8 +39,9 @@
   margin: 0;
   padding: 0;
   font-weight: normal;
-  font-size: 1rem;
+  font-size: 1.4rem;
 }
+
 
 .inferieur p span {
   color: #FBD256;
@@ -45,7 +57,7 @@
 .inferieur::before {
   content: "";
   position: absolute;
-  top: 5px;
+  top: 12px;
   left: -20px;
   background-color: #FBD256;
   width: 10px;
@@ -55,7 +67,7 @@
 .milieu::before {
   content: "";
   position: absolute;
-  top: 5px;
+  top: 12px;
   left: -20px;
   background-color: #F0842C;
   width: 10px;
@@ -65,7 +77,7 @@
 .superieur::before {
   content: "";
   position: absolute;
-  top: 5px;
+  top: 12px;
   left: -20px;
   background-color: #A31700;
   width: 10px;
@@ -89,8 +101,8 @@
 
 .marker:hover > .hoverGare {
   display: block;
-  height: 250px;
-  padding-bottom: 15px;
+  height: 270px;
+  padding-bottom: 50px;
 }
 
 .container-card-img {
@@ -105,7 +117,8 @@
 }
 
 .hoverGare p {
-  font-size: 1rem;
+  font-size: 1.4rem;
+  font-family: 'Work Sans', sans-serif;
 }
 
 /* bar time */
@@ -130,6 +143,8 @@
   text-align: left;
   transition: background-color 0.75s, color 0.5s;
   cursor: pointer;
+  font-family: 'Patrick Hand', cursive;
+  font-size: 1.2rem;
 }
 .progress ul li::before {
   cursor: pointer;
