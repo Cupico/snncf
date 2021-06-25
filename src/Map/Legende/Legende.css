@@ -1,13 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
-
-
-
-body{
-  font-family: 'Patrick Hand', cursive;
-}
-
-
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 
 .togglebtn {
   display: flex;
@@ -18,7 +9,7 @@ body{
   margin-top: 5px;
   margin-left: 10px;
   font-weight: normal;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
 }
 
 .affluence-title {
@@ -39,19 +30,18 @@ body{
   margin: 0;
   padding: 0;
   font-weight: normal;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
 }
 
-
 .inferieur p span {
-  color: #FBD256;
+  color: #fbd256;
 }
 
 .milieu p span {
-  color: #F0842C;
+  color: #f0842c;
 }
 .superieur p span {
-  color: #A31700;
+  color: #a31700;
 }
 
 .inferieur::before {
@@ -59,7 +49,7 @@ body{
   position: absolute;
   top: 12px;
   left: -20px;
-  background-color: #FBD256;
+  background-color: #fbd256;
   width: 10px;
   height: 10px;
 }
@@ -69,7 +59,7 @@ body{
   position: absolute;
   top: 12px;
   left: -20px;
-  background-color: #F0842C;
+  background-color: #f0842c;
   width: 10px;
   height: 10px;
 }
@@ -79,7 +69,7 @@ body{
   position: absolute;
   top: 12px;
   left: -20px;
-  background-color: #A31700;
+  background-color: #a31700;
   width: 10px;
   height: 10px;
 }
@@ -94,7 +84,7 @@ body{
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   text-align: center;
-  transition: all .5s ease;
+  transition: all 0.5s ease;
   overflow: hidden;
   height: 0;
 }
@@ -118,13 +108,13 @@ body{
 
 .hoverGare p {
   font-size: 1.4rem;
-  font-family: 'Work Sans', sans-serif;
 }
 
 /* bar time */
 
 .progress {
-  width: 80%;
+  padding-left: 70px;
+  width: 100%;
   margin: 30px auto;
   display: table;
   position: relative;
@@ -143,7 +133,6 @@ body{
   text-align: left;
   transition: background-color 0.75s, color 0.5s;
   cursor: pointer;
-  font-family: 'Patrick Hand', cursive;
   font-size: 1.2rem;
 }
 .progress ul li::before {

@@ -6,15 +6,13 @@ import "./Map.css";
 import Marker from "./Marker/Marker";
 import Legende from "./Legende/Legende";
 import TimeBar from "./TimeBar/TimeBar";
+import Aide from "./Aide/Aide";
 
 import { googleKey, style1, style2 } from "./../api/apiGoogle.js";
 
 import { steps } from "../constant";
 
-import { getAffluenceRER} from "../callApi/callApi";
-
-
-
+import { getAffluenceRER } from "../callApi/callApi";
 
 const map = {
   center: {
@@ -51,7 +49,7 @@ function Map() {
               montants: affluence,
               lat: newGare[i].lat,
               lng: newGare[i].lng,
-              img: newGare[i].img
+              img: newGare[i].img,
             };
           })
           .catch((err) => console.log(err));
@@ -66,10 +64,6 @@ function Map() {
       }, 4000);
     }
   };
-
-
-
-  
 
   return (
     <div id="Map" className="Map">
@@ -109,6 +103,8 @@ function Map() {
         </div>
       </div>
 
+      <Aide />
+
       <GoogleMapReact
         bootstrapURLKeys={{ key: googleKey }}
         defaultCenter={map.center}
@@ -134,7 +130,12 @@ function Map() {
 
       <div className="container-legende">
         <div className="block-bar">
-          <TimeBar step={step} setStep={setStep} newGare={newGare} getAffluence={getAffluence} />
+          <TimeBar
+            step={step}
+            setStep={setStep}
+            newGare={newGare}
+            getAffluence={getAffluence}
+          />
         </div>
 
         <div className="block-legende">

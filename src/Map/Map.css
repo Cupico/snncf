@@ -4,6 +4,43 @@
   z-index: 1;
 }
 
+.modal-aide{
+  position: absolute;
+  margin:auto;
+  top: 25%;
+  left: 0;
+  right: 0;
+  width: 50%;
+  background-color: white;
+  z-index: 99999;
+  box-shadow: 0 0 0 50vmax rgba(0,0,0,.5);
+  padding: 10px 20px;
+  animation: slidein 0.5s;
+}
+
+.modal-aide button{
+  position: absolute;
+  top: 5px;
+  right: 2px;
+  outline: none;
+  background-color: transparent;
+  border:none;
+  cursor: pointer;
+}
+
+@keyframes slidein {
+  from {
+    transform: translateY(-100px);
+    opacity:0;
+  }
+
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+
 /* STYLE MAP BUTTON */
 .container-button-style-map {
   position: absolute;
@@ -12,12 +49,28 @@
   z-index: 999;
 }
 
+
 .container-button-style-map button {
   outline: none;
   border: none;
-  background-color: red;
   width: 70px;
   height: 70px;
+}
+
+.container-aide-style-map {
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  z-index: 999;
+}
+
+.container-aide-style-map button {
+  outline: none;
+  border: none;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  background-color: white;
 }
 
 .btn-map-style1 button{
