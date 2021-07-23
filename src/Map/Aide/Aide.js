@@ -8,7 +8,7 @@ const Aide = () => {
   return (
     <div>
       <div className="container-aide-style-map">
-        <button onClick={() => setToggleAide(true)}>
+        <button onClick={() => setToggleAide(true)} style={{borderRadius: "2px"}}>
           <svg
             version="1.1"
             id="Capa_1"

@@ -11,6 +11,9 @@ export const style2 =[
       },
       {
         "lightness": 10
+      },
+      {
+        "weight": 2
       }
     ]
   },

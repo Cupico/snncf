@@ -5,7 +5,7 @@ const Marker = (props) => {
 
   return (
     <div
-      style={{ zIndex: 9999, cursor: "pointer" }}
+      style={{ zIndex: "99999 !important", cursor: "pointer" }}
       className="marker"
     >
       

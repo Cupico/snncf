@@ -65,6 +65,8 @@ function Map() {
     }
   };
 
+  
+
   return (
     <div id="Map" className="Map">
       {isLoading && (
