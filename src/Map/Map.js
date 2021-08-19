@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import GoogleMapReact from "google-map-react";
 
 import "./Map.css";
+import "./Legende/Legende.css";
 
 import Marker from "./Marker/Marker";
 import Legende from "./Legende/Legende";
@@ -31,6 +32,8 @@ function Map() {
   const [newGare, setNewGare] = useState([]);
 
   const [step, setStep] = useState(0);
+
+  const [testBtn, setTestBtn] = useState(false);
 
   const getAffluence = (value) => {
     setIsLoading(true);
@@ -65,7 +68,17 @@ function Map() {
     }
   };
 
-  
+  const charles = () => {
+    let test = document.getElementById("oreo");
+    setTestBtn((prevState) => !prevState);
+    if (testBtn) {
+      test.classList.remove("test_2");
+      test.classList.add("test");
+    } else {
+      test.classList.remove("test");
+      test.classList.add("test_2");
+    }
+  };
 
   return (
     <div id="Map" className="Map">
@@ -131,7 +144,46 @@ function Map() {
       </GoogleMapReact>
 
       <div className="container-legende">
-        <div className="block-bar">
+        <div className="block-bar test" id="oreo">
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <p>Lignes</p>
+            <div>
+              <button
+                onClick={charles}
+                style={{
+                  border: "none",
+                  backgroundColor: "transparent",
+                  cursor: "pointer",
+                }}
+              >
+                <svg
+                  version="1.1"
+                  id="Capa_1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlnsXlink="http://www.w3.org/1999/xlink"
+                  x="0px"
+                  y="0px"
+                  width="15px"
+                  height="15px"
+                  viewBox="0 0 451.847 451.847"
+                  style={{ enableBackground: "new 0 0 451.847 451.847;" }}
+                  xmlSpace="preserve"
+                >
+                  <g>
+                    <path
+                      d="M225.923,354.706c-8.098,0-16.195-3.092-22.369-9.263L9.27,151.157c-12.359-12.359-12.359-32.397,0-44.751
+		c12.354-12.354,32.388-12.354,44.748,0l171.905,171.915l171.906-171.909c12.359-12.354,32.391-12.354,44.744,0
+		c12.365,12.354,12.365,32.392,0,44.751L248.292,345.449C242.115,351.621,234.018,354.706,225.923,354.706z"
+                    />
+                  </g>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <Legende setNewGare={setNewGare} setStep={setStep} />
+        </div>
+
+        <div className="block-bar_2">
           <TimeBar
             step={step}
             setStep={setStep}
@@ -141,7 +193,28 @@ function Map() {
         </div>
 
         <div className="block-legende">
-          <Legende setNewGare={setNewGare} setStep={setStep} />
+          <div className="affluence-title" style={{ textAlign: "center" }}>
+            <p>Affluence</p>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <div className="inferieur">
+              <p>&#60; à 1000</p>
+            </div>
+
+            <div className="milieu">
+              <p>Entre 1000 et 5000</p>
+            </div>
+
+            <div className="superieur">
+              <p>&#62; à 5000</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

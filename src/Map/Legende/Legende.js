@@ -1,18 +1,20 @@
 import React, { useState } from "react";
-import "./Legende.css";
 
-import { rera, rerb } from "../../constant";
+import { rera, rerb, rerc } from "../../constant";
 
 const Legende = (props) => {
   const [toggleA, setToggleA] = useState(false);
   const [toggleB, setToggleB] = useState(false);
+  const [toggleC, setToggleC] = useState(false);
 
-  let test = props.infoGare;
+
+  //let test = props.infoGare;
 
   const handleMarker = (event) => {
     if (event.target.id === "switch-1") {
       props.setStep(0);
       setToggleB(false);
+      setToggleC(false);
       setToggleA((prevState) => !prevState);
       if (!toggleA) {
         props.setNewGare(rera);
@@ -23,6 +25,7 @@ const Legende = (props) => {
     if (event.target.id === "switch-2") {
       props.setStep(0);
       setToggleA(false);
+      setToggleC(false);
       setToggleB((prevState) => !prevState);
       if (!toggleB) {
         props.setNewGare(rerb);
@@ -30,13 +33,31 @@ const Legende = (props) => {
         props.setNewGare([]);
       }
     }
+    if (event.target.id === "switch-3") {
+      props.setStep(0);
+      setToggleA(false);
+      setToggleB(false);
+      setToggleC((prevState) => !prevState);
+      if (!toggleC) {
+        props.setNewGare(rerc);
+      } else {
+        props.setNewGare([]);
+      }
+    }
   };
 
+
   return (
-    <div style={{ width: "100%" }}>
-      <div className="div-legende">
-        <div className="affluence-title togglebtn">
-          <div className="switch-container">
+    <div>
+      <div>
+        <div
+          className="affluence-title togglebtn"
+          style={{ display: "flex", alignItems: "center" }}
+        >
+          <div>
+            <span className="rera">RER A</span>
+          </div>
+          <div className="switch-container" style={{marginLeft:"20px"}}>
             <label>
               <input
                 id="switch-1"
@@ -50,11 +71,16 @@ const Legende = (props) => {
               </div>
             </label>
           </div>
-          <span className="rera">Rer A</span>
         </div>
 
-        <div className="affluence-title togglebtn">
-        <div className="switch-container">
+        <div
+          className="affluence-title togglebtn"
+          style={{ display: "flex", alignItems: "center" }}
+        >
+          <div>
+            <span className="rera">RER B</span>
+          </div>
+          <div className="switch-container" style={{marginLeft:"20px"}}>
             <label>
               <input
                 id="switch-2"
@@ -68,30 +94,31 @@ const Legende = (props) => {
               </div>
             </label>
           </div>
-          <span className="rera">Rer B</span>
         </div>
-        <div className="affluence-title">
-          <p>Affluence</p>
-        </div>
-        <div className="inferieur">
-          <p>
-            &#60; à 1000 en <span>jaune</span>
-          </p>
-        </div>
-        <br />
-        <div className="milieu">
-          <p>
-            Entre 1000 et 5000 en <span>orange</span>
-          </p>
-        </div>
-        <br />
-        <div className="superieur">
-          <p>
-            &#62; à 5000 en <span>rouge</span>
-          </p>
+        <div
+          className="affluence-title togglebtn"
+          style={{ display: "flex", alignItems: "center" }}
+        >
+          <div>
+            <span className="rera">RER C</span>
+          </div>
+          <div className="switch-container" style={{marginLeft:"20px"}}>
+            <label>
+              <input
+                id="switch-3"
+                checked={toggleC}
+                onChange={handleMarker}
+                className="switch"
+                type="checkbox"
+              />
+              <div>
+                <div></div>
+              </div>
+            </label>
+          </div>
         </div>
       </div>
-      {props.infoGare &&
+      {/*props.infoGare &&
         props.infoGare.length > 0 &&
         test.map((e, i) => (
           <div key={i}>
@@ -100,7 +127,7 @@ const Legende = (props) => {
               {e.fields.ligne} | Date : {e.fields.date_comptage}
             </p>
           </div>
-        ))}
+        ))*/}
     </div>
   );
 };

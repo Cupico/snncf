@@ -1,11 +1,9 @@
 import React from "react";
 import { steps } from "../../constant";
 
-
 const TimeBar = (props) => {
-
   const nextStep = (event) => {
-    if(props.newGare && props.newGare.length > 0){
+    if (props.newGare && props.newGare.length > 0) {
       props.setStep(event.target.value);
       props.getAffluence(event.target.value - 1);
     }
@@ -13,25 +11,19 @@ const TimeBar = (props) => {
 
   return (
     <div>
-      <div className="progress">
-        <ul>
+      <div style={{width: "90%", margin: "0 auto"}}>
           {steps.map((e, i) => (
-            <li
-              className={props.step >= e.value + 1 ? "complete" : ""}
-              value={e.value}
-              id={e.time}
-              key={i}
-              onClick={nextStep}
-            >
-              <span className={props.step === e.value ? "current" : undefined}>
+            <div id={e.time} key={i} style={{listStyle: "none", display: "flex", justifyContent: "space-between", marginBottom: i === 4 ? "0px" : "10px"}}>
+              <span>
                 {e.time}
               </span>
-            </li>
+              <input type="radio" value={e.value} onClick={nextStep} style={{cursor:"pointer"}}/>
+            </div>
           ))}
-        </ul>
-      </div>
+        </div>
     </div>
   );
 };
 
 export default TimeBar;
+

@@ -4,34 +4,34 @@
   z-index: 1;
 }
 
-.modal-aide{
+.modal-aide {
   position: absolute;
-  margin:auto;
+  margin: auto;
   top: 25%;
   left: 0;
   right: 0;
   width: 50%;
   background-color: white;
   z-index: 99999;
-  box-shadow: 0 0 0 50vmax rgba(0,0,0,.5);
+  box-shadow: 0 0 0 50vmax rgba(0, 0, 0, 0.5);
   padding: 10px 20px;
   animation: slidein 0.5s;
 }
 
-.modal-aide button{
+.modal-aide button {
   position: absolute;
   top: 5px;
   right: 2px;
   outline: none;
   background-color: transparent;
-  border:none;
+  border: none;
   cursor: pointer;
 }
 
 @keyframes slidein {
   from {
     transform: translateY(-100px);
-    opacity:0;
+    opacity: 0;
   }
 
   to {
@@ -40,7 +40,6 @@
   }
 }
 
-
 /* STYLE MAP BUTTON */
 .container-button-style-map {
   position: absolute;
@@ -48,7 +47,6 @@
   left: 20px;
   z-index: 999;
 }
-
 
 .container-button-style-map button {
   outline: none;
@@ -73,15 +71,15 @@
   background-color: white;
 }
 
-.btn-map-style1 button{
-  background-image: url('../assets/style2.png');
+.btn-map-style1 button {
+  background-image: url("../assets/style2.png");
   background-size: cover;
   background-position: center;
 }
 
-.btn-map-style2 button{
+.btn-map-style2 button {
   margin-top: 20px;
-  background-image: url('../assets/style1.png');
+  background-image: url("../assets/style1.png");
   background-size: cover;
   background-position: center;
 }
@@ -92,117 +90,132 @@
   position: absolute;
   z-index: 0;
   bottom: 3%;
-  right: 7%;
-  width: 90%;
+  left: 1.5%;
+  width: 92%;
   display: flex;
-  justify-content: space-between;
   align-items: flex-end;
+
 }
 
 .block-bar {
-  padding-top: 30px;
+  padding: 10px;
   background-color: rgba(255, 255, 255, 1);
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
   border-radius: 15px;
-  width: 70%;
-  height: 0%;
+  width: 15%;
+  overflow: hidden;
 }
+
+.block-bar_2 {
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  width: 12.5%;
+  height: 0%;
+  margin-left: 4%;
+}
+
+/* time button */
+
+
+
+/* end */
 
 .block-legende {
   background-color: rgba(255, 255, 255, 1);
-  width: 23%;
+  width: 30%;
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
   border-radius: 15px;
-  padding: 15px 20px 15px 20px;
+  padding: 0px 0px 15px 20px;
+  position: absolute;
+  right: 0;
 }
 
 /* toggle button */
 
-
-input[type="checkbox"].switch  {
-	position: absolute;
-	opacity: 0;
+input[type="checkbox"].switch {
+  position: absolute;
+  opacity: 0;
 }
 
 input[type="checkbox"].switch + div {
-	vertical-align: middle;
-	width: 40px;
-	height: 20px;
-	border-radius: 999px;
-	background-color: #00B0F2;
-	-webkit-transition-duration: .4s;
-	transition-duration: .4s;
-	-webkit-transition-property: background-color, box-shadow;
-	transition-property: background-color, box-shadow;
-	cursor: pointer;
+  vertical-align: middle;
+  width: 40px;
+  height: 20px;
+  border-radius: 999px;
+  background-color: #00b0f2;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  -webkit-transition-property: background-color, box-shadow;
+  transition-property: background-color, box-shadow;
+  cursor: pointer;
 }
 
 input[type="checkbox"].switch + div span {
-	position: absolute;
-    font-size: 1.6rem;
-    color: white;
-    margin-top: 12px;
+  position: absolute;
+  font-size: 1.6rem;
+  color: white;
+  margin-top: 12px;
 }
 
-input[type="checkbox"].switch + div span:nth-child( 1 ) {
-    margin-left: 15px;
+input[type="checkbox"].switch + div span:nth-child(1) {
+  margin-left: 15px;
 }
 
-input[type="checkbox"].switch + div span:nth-child( 2 ) {
-    margin-left: 55px;
+input[type="checkbox"].switch + div span:nth-child(2) {
+  margin-left: 55px;
 }
 
 input[type="checkbox"].switch:checked + div {
-	width: 47px;
-	background-position: 0 0;
-	background-color: #3b89ec;
+  width: 47px;
+  background-position: 0 0;
+  background-color: #3b89ec;
 }
 
 input[type="checkbox"].switch + div {
-	width: 47px;
-	height: 24px;
+  width: 47px;
+  height: 24px;
 }
 
-
 input[type="checkbox"].switch:checked + div {
-	background-color: #57BB00;
+  background-color: #57bb00;
 }
 
 input[type="checkbox"].switch + div > div {
-	float: left;
-	width: 25px; height: 25px;
-	border-radius: inherit;
-	background: #ffffff;
-	-webkit-transition-timing-function: cubic-bezier(1,0,0,1);
-	transition-timing-function: cubic-bezier(1,0,0,1);
-	-webkit-transition-duration: 0.4s;
-	transition-duration: 0.4s;
-	-webkit-transition-property: transform, background-color;
-	transition-property: transform, background-color;
-	pointer-events: none;
-	margin-top: 0px;
-	margin-left: 0px;
+  float: left;
+  width: 25px;
+  height: 25px;
+  border-radius: inherit;
+  background: #ffffff;
+  -webkit-transition-timing-function: cubic-bezier(1, 0, 0, 1);
+  transition-timing-function: cubic-bezier(1, 0, 0, 1);
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  -webkit-transition-property: transform, background-color;
+  transition-property: transform, background-color;
+  pointer-events: none;
+  margin-top: 0px;
+  margin-left: 0px;
   box-shadow: 0px 0px 6px 4px rgba(0, 0, 0, 0.07);
 }
 
 input[type="checkbox"].switch:checked + div > div {
-	-webkit-transform: translate3d(20px, 0, 0);
-	transform: translate3d(20px, 0, 0);
-	background-color: #ffffff;
+  -webkit-transform: translate3d(20px, 0, 0);
+  transform: translate3d(20px, 0, 0);
+  background-color: #ffffff;
 }
 
 input[type="checkbox"].bigswitch.switch + div > div {
-	width: 22px;
-	height: 22px;
-	margin-top: 0.5px;
+  width: 22px;
+  height: 22px;
+  margin-top: 0.5px;
 }
-
 
 input[type="checkbox"].switch:checked + div > div {
-	-webkit-transform: translate3d(23px, 0, 0);
-	transform: translate3d(23px, 0, 0);
+  -webkit-transform: translate3d(23px, 0, 0);
+  transform: translate3d(23px, 0, 0);
 }
-
 
 /* animatins */
 
@@ -351,3 +364,14 @@ input[type="checkbox"].switch:checked + div > div {
 /*
  * Some bugs with Chrome (Android), Safari and Opera, I'll try to see how http://atomeye.com/projects/sass-css-spinner.html made his code.
  */
+
+
+ .test{
+   height: 30px;
+   transition: all 0.5s;
+ }
+
+ .test_2{
+  height: 170px;
+  transition: all 0.5s;
+}

@@ -60,7 +60,7 @@ export const getGare = (gare) => {
     return new Promise((resolve, reject) => {
       superagent
         .get(
-          `https://data.iledefrance.fr/api/records/1.0/search/?dataset=lignes-par-gare-sur-le-reseau-transilien&q=&rows=70&facet=rer&facet=b&refine.rer=1&refine.b=1`
+          `https://data.iledefrance.fr/api/records/1.0/search/?dataset=lignes-par-gare-sur-le-reseau-transilien&q=&rows=70&facet=rer&facet=b&refine.rer=1&refine.c=1`
         )
         //.set({ Authorization: `f600e6b7-f14a-45b7-be48-09c127444d37` })
         .set("Accept", "application/json")
