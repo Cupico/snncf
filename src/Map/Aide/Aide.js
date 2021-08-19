@@ -1,14 +1,17 @@
 import React, { useState } from "react";
 
 const Aide = () => {
-  const [toggleAide, setToggleAide] = useState(false);
+  const [toggleAide, setToggleAide] = useState(true);
 
-  console.log(toggleAide);
+  const [text, setText] = useState("Bienvenue !");
 
   return (
     <div>
       <div className="container-aide-style-map">
-        <button onClick={() => setToggleAide(true)} style={{borderRadius: "2px"}}>
+        <button
+          onClick={() => setToggleAide(true)}
+          style={{ borderRadius: "2px" }}
+        >
           <svg
             version="1.1"
             id="Capa_1"
@@ -38,7 +41,13 @@ const Aide = () => {
 
       {toggleAide && (
         <div className="modal-aide">
-          <button onClick={() => setToggleAide(false)}>
+          <p style={{textAlign:'center', fontSize:"2rem", fontWeight:"bold"}}>{text}</p>
+          <button
+            onClick={() => {
+              setToggleAide(false);
+              setText("Informations")
+            }}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="30"
@@ -51,22 +60,41 @@ const Aide = () => {
           </button>
           <p style={{ fontWeight: "bold" }}>Qu'est ce que Safe Travel ?</p>
           <p>
-            C'est une application web qui met en avant les affluences des gares
-            des transports transiliens en fonction des horaires permettant aux
-            utilisateurs de prévoir leur trajet de manière réfléchie pour ne pas
-            se retrouver dans des trains bondés.
+            Safe Travel vous permet d'aménager vos trajets dans le but d'éviter
+            les horaires les plus affluentes. Choisissez votre ligne ainsi que
+            la tranche horaire qui vous intéresse et observez l'affluence dans
+            les stations qui vous intéressent.
           </p>
 
           <p style={{ fontWeight: "bold" }}>Comment ça fonctionne ?</p>
 
-          <p>
-            Pour l'utiliser, il suffit de cliquer sur l'un des boutons
-            correspondant à votre ligne (RER A, RER B...) et ensuite de préciser
-            votre tranche horaire.
-            <br />
-            Vous pourrez donc connaître l'affluence de chaque gare en fonction
-            de l'heure choisie en passant la souris sur la gare voulue.
-          </p>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              marginTop: "30px",
+            }}
+          >
+            <div class="container-etape">
+              <div class="etape-1"></div>
+              <p>1</p>
+              <p>Choisissez vos lignes de transport</p>
+            </div>
+
+            <div class="container-etape">
+              <div class="etape-2"></div>
+              <p>2</p>
+              <p>Sélectionnez votre tranche horaire</p>
+            </div>
+
+            <div class="container-etape">
+              <div class="etape-3"></div>
+              <p>3</p>
+              <p>
+                Visualisez simplement l'affluence dans <br /> les stations
+              </p>
+            </div>
+          </div>
         </div>
       )}
     </div>

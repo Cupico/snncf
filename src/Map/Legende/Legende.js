@@ -49,8 +49,9 @@ const Legende = (props) => {
       <div>
         <div
           className="affluence-title togglebtn"
-          style={{ display: "flex", alignItems: "center" }}
+          style={{ display: "flex", alignItems: "center", justifyContent:"center" }}
         >
+       <img alt="rer" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Paris_RER_A_icon.svg/1200px-Paris_RER_A_icon.svg.png" style={{width: "20px", height: "20px", margin: "0px"}}/>
           <div>
             <span className="rera">RER A</span>
           </div>
@@ -72,8 +73,9 @@ const Legende = (props) => {
 
         <div
           className="affluence-title togglebtn"
-          style={{ display: "flex", alignItems: "center" }}
+          style={{ display: "flex", alignItems: "center", justifyContent:"center"  }}
         >
+          <img alt="rer" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Paris_RER_B_icon.svg/2048px-Paris_RER_B_icon.svg.png" style={{width: "20px", height: "20px", margin: "0px"}}/>
           <div>
             <span className="rera">RER B</span>
           </div>
@@ -94,8 +96,9 @@ const Legende = (props) => {
         </div>
         <div
           className="affluence-title togglebtn"
-          style={{ display: "flex", alignItems: "center" }}
+          style={{ display: "flex", alignItems: "center", justifyContent:"center"  }}
         >
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Paris_RER_C_icon.svg/1024px-Paris_RER_C_icon.svg.png" alt="Fichier:Paris RER C icon.svg — Wikipédia" jsname="HiaYvf" jsaction="load:XAeZkd;" class="n3VNCb" data-noaft="1" style={{width: "20px", height: "20px", margin: "0px"}}/>
           <div>
             <span className="rera">RER C</span>
           </div>

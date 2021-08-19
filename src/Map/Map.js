@@ -33,6 +33,8 @@ function Map() {
 
   const [testBtn, setTestBtn] = useState(false);
 
+  const [testBtn2, setTestBtn2] = useState(false);
+
   const getAffluence = (value) => {
     setIsLoading(true);
     const NoDataGare = 300;
@@ -66,15 +68,27 @@ function Map() {
     }
   };
 
-  const charles = () => {
-    let test = document.getElementById("oreo");
+  const animeLignes = () => {
+    let test = document.getElementById("animeLignes");
     setTestBtn((prevState) => !prevState);
     if (testBtn) {
-      test.classList.remove("test_2");
-      test.classList.add("test");
-    } else {
       test.classList.remove("test");
       test.classList.add("test_2");
+    } else {
+      test.classList.remove("test_2");
+      test.classList.add("test");
+    }
+  };
+
+  const animeHoraire = () => {
+    let test = document.getElementById("animeHoraire");
+    setTestBtn2((prevState) => !prevState);
+    if (testBtn2) {
+      test.classList.remove("test");
+      test.classList.add("test_3");
+    } else {
+      test.classList.remove("test_3");
+      test.classList.add("test");
     }
   };
 
@@ -94,6 +108,10 @@ function Map() {
           </span>
         </div>
       )}
+
+      <div class="logo">
+    &nbsp;
+      </div>
 
       <div className="container-button-style-map">
         <div className="btn-map-style1">
@@ -144,7 +162,7 @@ function Map() {
       </GoogleMapReact>
 
       <div className="container-legende">
-        <div className="block-bar test" id="oreo">
+        <div className="block-bar test_2" id="animeLignes">
           <div
             style={{
               display: "flex",
@@ -152,9 +170,9 @@ function Map() {
               justifyContent: "center",
               marginTop: "-10px",
             }}
-            onClick={charles}
+            onClick={animeLignes}
           >
-            <p style={{cursor:"pointer"}}>Lignes</p>
+            <p style={{ cursor: "pointer" }}>Lignes de transport</p>
             <div>
               <button
                 style={{
@@ -190,7 +208,49 @@ function Map() {
           <Legende setNewGare={setNewGare} />
         </div>
 
-        <div className="block-bar_2">
+        <div className="block-bar_2 test_3" id="animeHoraire">
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              marginTop: "-10px",
+            }}
+            onClick={animeHoraire}
+          >
+            <p style={{ cursor: "pointer" }}>Tranches horaires</p>
+            <div>
+              <button
+                style={{
+                  border: "none",
+                  backgroundColor: "transparent",
+                  cursor: "pointer",
+                }}
+              >
+                <svg
+                  version="1.1"
+                  id="Capa_1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlnsXlink="http://www.w3.org/1999/xlink"
+                  x="0px"
+                  y="0px"
+                  width="15px"
+                  height="15px"
+                  viewBox="0 0 451.847 451.847"
+                  style={{ enableBackground: "new 0 0 451.847 451.847" }}
+                  xmlSpace="preserve"
+                >
+                  <g>
+                    <path
+                      d="M225.923,354.706c-8.098,0-16.195-3.092-22.369-9.263L9.27,151.157c-12.359-12.359-12.359-32.397,0-44.751
+		c12.354-12.354,32.388-12.354,44.748,0l171.905,171.915l171.906-171.909c12.359-12.354,32.391-12.354,44.744,0
+		c12.365,12.354,12.365,32.392,0,44.751L248.292,345.449C242.115,351.621,234.018,354.706,225.923,354.706z"
+                    />
+                  </g>
+                </svg>
+              </button>
+            </div>
+          </div>
           <TimeBar newGare={newGare} getAffluence={getAffluence} />
         </div>
 
