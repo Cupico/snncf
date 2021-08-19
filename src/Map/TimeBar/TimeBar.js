@@ -4,8 +4,8 @@ import { steps } from "../../constant";
 const TimeBar = (props) => {
   const nextStep = (event) => {
     if (props.newGare && props.newGare.length > 0) {
-      props.setStep(event.target.value);
       props.getAffluence(event.target.value - 1);
+      console.log(event.target.value - 1)
     }
   };
 
@@ -17,7 +17,7 @@ const TimeBar = (props) => {
               <span>
                 {e.time}
               </span>
-              <input type="radio" value={e.value} onClick={nextStep} style={{cursor:"pointer"}}/>
+              <input type="radio" value={e.value} onClick={nextStep} style={{cursor:"pointer"}} name="timebar"/>
             </div>
           ))}
         </div>

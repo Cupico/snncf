@@ -12,7 +12,6 @@ const Legende = (props) => {
 
   const handleMarker = (event) => {
     if (event.target.id === "switch-1") {
-      props.setStep(0);
       setToggleB(false);
       setToggleC(false);
       setToggleA((prevState) => !prevState);
@@ -23,7 +22,6 @@ const Legende = (props) => {
       }
     }
     if (event.target.id === "switch-2") {
-      props.setStep(0);
       setToggleA(false);
       setToggleC(false);
       setToggleB((prevState) => !prevState);
@@ -34,7 +32,6 @@ const Legende = (props) => {
       }
     }
     if (event.target.id === "switch-3") {
-      props.setStep(0);
       setToggleA(false);
       setToggleB(false);
       setToggleC((prevState) => !prevState);

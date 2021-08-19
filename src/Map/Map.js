@@ -31,8 +31,6 @@ function Map() {
 
   const [newGare, setNewGare] = useState([]);
 
-  const [step, setStep] = useState(0);
-
   const [testBtn, setTestBtn] = useState(false);
 
   const getAffluence = (value) => {
@@ -79,6 +77,8 @@ function Map() {
       test.classList.add("test_2");
     }
   };
+
+  //let testo = newGare && newGare.length > 0 ? newGare : [];
 
   return (
     <div id="Map" className="Map">
@@ -145,11 +145,18 @@ function Map() {
 
       <div className="container-legende">
         <div className="block-bar test" id="oreo">
-          <div style={{ display: "flex", alignItems: "center" }}>
-            <p>Lignes</p>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              marginTop: "-10px",
+            }}
+            onClick={charles}
+          >
+            <p style={{cursor:"pointer"}}>Lignes</p>
             <div>
               <button
-                onClick={charles}
                 style={{
                   border: "none",
                   backgroundColor: "transparent",
@@ -166,7 +173,7 @@ function Map() {
                   width="15px"
                   height="15px"
                   viewBox="0 0 451.847 451.847"
-                  style={{ enableBackground: "new 0 0 451.847 451.847;" }}
+                  style={{ enableBackground: "new 0 0 451.847 451.847" }}
                   xmlSpace="preserve"
                 >
                   <g>
@@ -180,16 +187,11 @@ function Map() {
               </button>
             </div>
           </div>
-          <Legende setNewGare={setNewGare} setStep={setStep} />
+          <Legende setNewGare={setNewGare} />
         </div>
 
         <div className="block-bar_2">
-          <TimeBar
-            step={step}
-            setStep={setStep}
-            newGare={newGare}
-            getAffluence={getAffluence}
-          />
+          <TimeBar newGare={newGare} getAffluence={getAffluence} />
         </div>
 
         <div className="block-legende">
