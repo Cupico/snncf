@@ -280,7 +280,7 @@ export const style2 =[
   }
 ]
 
-export const style1 = [
+export const style1 =[
   {
     "elementType": "geometry",
     "stylers": [
@@ -324,6 +324,14 @@ export const style1 = [
   },
   {
     "featureType": "administrative.land_parcel",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative.land_parcel",
     "elementType": "labels.text.fill",
     "stylers": [
       {
@@ -345,15 +353,9 @@ export const style1 = [
     "stylers": [
       {
         "color": "#4b6878"
-      }
-    ]
-  },
-  {
-    "featureType": "landscape.man_made",
-    "elementType": "geometry",
-    "stylers": [
+      },
       {
-        "visibility": "simplified"
+        "weight": 3
       }
     ]
   },
@@ -363,9 +365,6 @@ export const style1 = [
     "stylers": [
       {
         "color": "#334e87"
-      },
-      {
-        "visibility": "simplified"
       }
     ]
   },
@@ -380,13 +379,18 @@ export const style1 = [
   },
   {
     "featureType": "poi",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "poi",
     "elementType": "geometry",
     "stylers": [
       {
         "color": "#283d6a"
-      },
-      {
-        "visibility": "off"
       }
     ]
   },
